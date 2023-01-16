@@ -11,7 +11,7 @@ export default defineConfig({
       fileName: (format: any) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'index.css'],
       output: {
         globals: {
           react: 'React',
@@ -22,5 +22,8 @@ export default defineConfig({
     sourcemap: true,
     emptyOutDir: true
   },
-  plugins: [react(), dts()],
+  plugins: [
+    react(),
+    dts(),
+  ]
 })
